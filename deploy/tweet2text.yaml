@@ -1,0 +1,42 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: dev
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: tweet2text-deployment
+  labels:
+    app: tweet2text
+  namespace: dev
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: tweet2text
+  template:
+    metadata:
+      labels:
+        app: tweet2text
+    spec:
+      containers:
+      - name: tweet2text
+        image: dbandin/tweet2text-flax:2e8fddf55c364ed5d036306870d49ed426b8b0f1
+        ports:
+        - containerPort: 5000
+# 2e8fddf55c364ed5d036306870d49ed426b8b0f1
+---
+kind: Service
+apiVersion: v1
+metadata:
+  name: tweet2text-service
+  namespace: dev
+spec:
+  selector:
+    app: tweet2text
+  ports:
+  - protocol: TCP
+    port: 80
+    targetPort: 5000
+  type: LoadBalancer
