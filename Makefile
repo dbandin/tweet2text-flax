@@ -16,6 +16,9 @@ install:
 lint:
 	flake8 ${PYFILES}
 
+pytest:
+	python3 setup.py test
+
 format:
 	yapf -r -i ${PYFILES}
 

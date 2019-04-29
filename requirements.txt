@@ -1,2 +1,5 @@
 Flask~=0.12.2
 WTForms~=2.2.1
+pytest==4.0.2
+pytest-cov==2.6.0
+
