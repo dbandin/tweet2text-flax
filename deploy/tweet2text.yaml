@@ -22,10 +22,9 @@ spec:
     spec:
       containers:
       - name: tweet2text
-        image: dbandin/tweet2text-flax:2e8fddf55c364ed5d036306870d49ed426b8b0f1
+        image: dbandin/tweet2text-flax:latest
         ports:
         - containerPort: 5000
-# 2e8fddf55c364ed5d036306870d49ed426b8b0f1
 ---
 kind: Service
 apiVersion: v1
