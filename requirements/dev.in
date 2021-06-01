@@ -1,0 +1,5 @@
+boto3
+tweepy
+argparse
+pyyaml
+pip-tools

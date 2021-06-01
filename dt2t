@@ -1,0 +1,3 @@
+#!/bin/bash
+
+docker run --rm -it --entrypoint=tweet2text dbandin/tweet2text-cli:latest $@

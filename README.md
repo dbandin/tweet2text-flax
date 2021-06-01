@@ -41,6 +41,10 @@ Install deps
 ~~~
  (p3_venv) $ pip install boto3 tweepy argparse
 ~~~
+"OR" Alternatively the dependencies can be installed with the auto generated file.
+~~~
+ (p3_venv) $ pip install -r requirements/dev.txt
+~~~
 
 ## Download the repo
 
@@ -52,7 +56,7 @@ Install deps
 ## Install locally the script.
 
 ~~~
- (p3_venv) $ pip install .
+ (p3_venv) $ pip install -e .
 ~~~
 
 # Configuration
@@ -119,6 +123,39 @@ Text Array: ['01001000 01 100001', '01110000 01110000', '01111001 00100000', '01
 Happy BirthdayHappy Birthday
 ~~~
 
+# Running it from docker
+
+- Build the image
+~~~
+ $ make dk-build
+~~~
+- Use the bash script to call the docker container with parameters.
+~~~
+ $ ./dt2t --help
+usage: tweet2text [-h] -t TWITTER_CREDS_FILE TWITTER_URL
+
+Small program to retrieve images from twitter and recognize text from images.
+
+positional arguments:
+  TWITTER_URL           Url to specific twit to retrieve text
+
+optional arguments:
+  -h, --help            show this help message and exit
+  -t TWITTER_CREDS_FILE, --twitter-cred-file TWITTER_CREDS_FILE
+                        Path to YAML file with twitter credentials
+~~~
+
+The bash script can be copied to a path that is present in PATH or export the
+project path.
+
+- Plain Docker command to run the container.
+~~~
+docker run --rm -it --entrypoint=tweet2text ${CONTAINER_NAME}:latest
+~~~
+
 # TO-DO
 
 This is the first ugly version that works, there is some exception handling, testing, inteligence and support to add.
+
+- Separate requirements file with dev, runtime, testing, etc.
+- Implement `docker scan` in the Makefile
