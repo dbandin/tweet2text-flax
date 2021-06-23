@@ -28,7 +28,7 @@ oauthlib==3.1.0
     # via requests-oauthlib
 pep517==0.10.0
     # via pip-tools
-pip-tools==6.1.0
+pip-tools==6.2.0
     # via -r requirements/dev.in
 pysocks==1.7.1
     # via requests
@@ -56,6 +56,9 @@ urllib3==1.26.5
     # via
     #   botocore
     #   requests
+wheel==0.36.2
+    # via pip-tools
 
 # The following packages are considered to be unsafe in a requirements file:
 # pip
+# setuptools
