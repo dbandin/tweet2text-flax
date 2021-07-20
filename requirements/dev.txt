@@ -6,9 +6,9 @@
 #
 argparse==1.4.0
     # via -r requirements/dev.in
-boto3==1.17.84
+boto3==1.18.2
     # via -r requirements/dev.in
-botocore==1.20.84
+botocore==1.21.2
     # via
     #   boto3
     #   s3transfer
@@ -42,7 +42,7 @@ requests[socks]==2.25.1
     # via
     #   requests-oauthlib
     #   tweepy
-s3transfer==0.4.2
+s3transfer==0.5.0
     # via boto3
 six==1.16.0
     # via
